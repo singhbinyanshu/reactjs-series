@@ -1,0 +1,24 @@
+{
+  "name": "complete_react",
+  "version": "1.0.0",
+  "description": "reactjs complete course",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build":"parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "targets": {
+    "default": {
+      "distDir": "./dist",
+      "publicUrl": "/"
+    }
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
