@@ -1,16 +1,28 @@
-import { productList } from "../utils/Constant";
+import { useState } from "react";
+import { productList } from "../utils/constant";
 import Product from "./Product";
-export const ProductCard = () => {
-    return (
-        <div className="product_card">
-            {
-                productList.map((product, index) => {
-                    return (
-                        <Product key={product.id} product={product}/>
-                    )
-                })
-            }
-        </div>
-    )
-};
 
+export const ProductCard = () => {
+  // local state variable listOfProduct
+  const [listOfProduct, setListOfProduct] = useState(productList);
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          const filteredProduct = listOfProduct.filter(product => product.rating.rate >= 4);
+          setListOfProduct(filteredProduct);
+        }} style={{ marginTop: "10px" }}
+      >
+        Top rated product
+      </button>
+
+      <div className="product_card">
+        {listOfProduct.map(product => {
+          return <Product key={product.id} product={product} 
+        />;
+        })}
+      </div>
+    </div>
+  );
+};
